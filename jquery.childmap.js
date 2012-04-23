@@ -1,9 +1,9 @@
 /**
 	jQuery.childmap v0.1
-	Dave Taylor http://the-taylors.org
+	Dave Taylor http://the-taylors.org/jquery.childmap/
 
 	@license The MIT License (MIT)
-	@preserve Copyright (c) 2011 Dave Taylor http://the-taylors.org
+	@preserve Copyright (c) 2012 Dave Taylor http://the-taylors.org
 */
 /*global define,require */
 (function($){
