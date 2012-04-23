@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>jQuery.childmap</title>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script src="jquery.childmap.js"></script>
+        <link rel="stylesheet" href="http://the-taylors.org/css/brand/brand.css">
+        <link rel="stylesheet" href="../davetayls.github.com/css/demopage.css">
+
+        <style type="text/css">
+            .box {
+                background: #ccc;
+                width: 100px;
+                height: 50px;
+                float: left;
+                margin: 3px;
+            }
+            .b2 { width: 25px; height: 25px; }
+            .b3 { width: 50px; height: 25px; }
+            .b4 { width: 100px; height: 50px; }
+            .b5 { width: 50px; height: 50px; }
+
+            .mod-childmaps {
+                margin: 20px 0;
+            }
+                .childmap-active {
+                    position: relative;
+                    border: solid 1px #ccc;
+                    -webkit-transition: all .2s ease-in;
+                       -moz-transition: all .2s ease-in;
+                         -o-transition: all .2s ease-in;
+                            transition: all .2s ease-in;
+                }
+                .childmap-child {
+                    position: absolute;
+                    display: block;
+                    background: #ccc;
+                    width: 20px;
+                    height: 10px;
+                }
+            .mod-mappedArea {
+                border: solid 1px #ccc;
+                position: relative;
+                max-width: 300px;
+                zoom: 1;
+            }
+            .mod-mappedArea:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+            @media all and (min-width: 768px) {
+                .mod-childmaps {
+                    float: left;
+                    width: 30%;
+                }
+                .mod-mappedArea {
+                    float: right;
+                    width: 60%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container" class="mod-constrained">
+            <h1>jQuery.childmap</h1>
+            <p class="cp-description">
+                Zoomed block map of an element's children
+            </p>
+
+            <div class="mod-childmaps">
+                <h2>Simple Map</h2>
+                <div class="cp-simpleMap"></div>
+            </div>
+            <div class="mod-mappedArea">
+                <div class="box"></div>
+                <div class="box b2"></div>
+                <div class="box b2"></div>
+                <div class="box b3"></div>
+                <div class="box b2"></div>
+                <div class="box b4"></div>
+                <div class="box b3"></div>
+                <div class="box b2"></div>
+                <div class="box b4"></div>
+                <div class="box b2"></div>
+            </div>
+
+            <script type="text/javascript">
+                var $parent = $('.mod-mappedArea');
+                $('.cp-simpleMap').childmap({
+                    parent: $parent
+                });
+                setInterval(function(){
+                    $parent.width(
+                        Math.floor(Math.random() * 200) + 100
+                    );
+                }, 2000);
+            </script>
+
+        </div>
+    </body>
+</html>
