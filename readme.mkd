@@ -1,0 +1,4 @@
+jQuery.childmap
+===============
+
+Creates a simple box map of an elements children
