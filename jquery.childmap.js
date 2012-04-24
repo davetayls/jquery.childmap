@@ -57,6 +57,7 @@
 		positionChild: function($child, $map){
 			var pos = $child.position(),
 				mappedValues = {
+					display: $child.css('display'),
 					top: Math.floor(pos.top * this.settings.zoom),
 					left: Math.floor(pos.left * this.settings.zoom),
 					width: Math.floor($child.width() * this.settings.zoom),
