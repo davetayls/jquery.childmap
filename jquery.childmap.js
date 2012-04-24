@@ -1,9 +1,9 @@
 /**
 	jQuery.childmap v0.1
-	Dave Taylor http://the-taylors.org
+	Dave Taylor http://the-taylors.org/jquery.childmap/
 
 	@license The MIT License (MIT)
-	@preserve Copyright (c) 2011 Dave Taylor http://the-taylors.org
+	@preserve Copyright (c) 2012 Dave Taylor http://the-taylors.org
 */
 /*global define,require */
 (function($){
@@ -57,6 +57,7 @@
 		positionChild: function($child, $map){
 			var pos = $child.position(),
 				mappedValues = {
+					display: $child.css('display'),
 					top: Math.floor(pos.top * this.settings.zoom),
 					left: Math.floor(pos.left * this.settings.zoom),
 					width: Math.floor($child.width() * this.settings.zoom),
